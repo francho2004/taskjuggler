@@ -306,7 +306,7 @@ textreport frame "" {
   }
 }
 
-textreport initialPlan "Initial Plan" {
+taskreport initialPlan "Initial Plan" {
   formats html
   title "Initial Project Plan"
   headline "Initial Project Plan Overview"
