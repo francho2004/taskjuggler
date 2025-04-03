@@ -19,7 +19,7 @@ project pSix "Web Game"  2024-12-15 +5m {
   # the project reports. If not specified, the current day will be
   # used, but this will likely be outside of the project range, so it
   # can't be seen in the reports.
-  now 2025-02-25-13:00
+  now 2025-04-03-11:00
   # The currency for all money values is the US Dollar.
   currency "EUR"
 
@@ -193,7 +193,7 @@ task WMGame "Web & Mobile Game" {
   }
 
   task ttest "Acceptance tests" {
-      start earliest 2025-05-15
+      minstart 2025-05-15
       effort 10d
       allocate boss
       allocate dev2
