@@ -134,6 +134,7 @@ task WMGame "Web & Mobile Game" {
       actual:effort 11d
       allocate dev1
       depends WMGame.tback.tBEd
+      depends WMGame.tdesp.tBEdesp_descision
     }
   }
 
