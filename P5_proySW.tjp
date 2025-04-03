@@ -326,11 +326,11 @@ taskreport overview "" {
   caption 'All effort values are in man days.'
 }
 
-resourcereport initialPlan "" {
+taskreport initialPlan "" {
   scenarios plan
   headline "Initial Project Plan Overview"
   columns bsi { title 'WBS' },
-        name, start, end, cost, chart { ${TaskTip} }
+        name, start, end, effort, cost, chart { ${TaskTip} }
 }
 
 
