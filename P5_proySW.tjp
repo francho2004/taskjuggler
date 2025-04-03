@@ -326,6 +326,13 @@ taskreport overview "" {
   caption 'All effort values are in man days.'
 }
 
+resourcereport initialPlan "" {
+  scenarios plan
+  headline "Initial Project Plan Overview"
+  columns bsi { title 'WBS' },
+        name, start, end, cost, chart { ${TaskTip} }
+}
+
 
 # Macro to set the background color of a cell according to the alert
 # level of the task.
@@ -407,19 +414,4 @@ resourcereport resourceGraph "" {
   # We only like to show leaf tasks for leaf resources.
   hidetask ~(isleaf() & isleaf_())
   sorttasks plan.start.up
-}
-
-resourcereport initialPlan "" {
-  scenarios plan
-  headline "Initial Project Plan Overview"
-  columns bsi { title 'WBS' },
-        name, start, end, effort, cost,
-        revenue, chart { ${TaskTip} }
-  # For this report we like to have the abbreviated weekday in front
-  # of the date. %a is the tag for this.
-  timeformat "%a %Y-%m-%d"
-  loadunit days
-  hideresource @none
-  balance cost rev
-  caption 'All effort values are in man days.'
 }
