@@ -304,9 +304,7 @@ textreport frame "" {
     title "Resource Graph"
     center '<[report id="resourceGraph"]>'
   }
-}
-
-taskreport initialPlan "Initial Plan" {
+  textreport initialPlan "Initial Plan" {
   formats html
   title "Initial Project Plan"
   headline "Initial Project Plan Overview"
@@ -319,6 +317,7 @@ taskreport initialPlan "Initial Plan" {
   hideresource @all
   balance cost rev
   caption 'All effort values are in man days.'
+}
 }
 
 # A traditional Gantt chart with a project overview.
