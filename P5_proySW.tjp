@@ -135,6 +135,11 @@ task WMGame "Web & Mobile Game" {
       allocate dev1
       depends WMGame.tback.tBEd
       depends WMGame.tdesp.tBEdesp_descision
+      journalentry 2025-04-03 "Problemas con el Despliegue en la nube" {
+        author boss
+        alert yellow
+        summary "The team has ended the game logic before deadline."
+      }
     }
   }
 
