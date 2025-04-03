@@ -27,7 +27,7 @@ project pSix "Web Game"  2024-12-15 +10m {
   scenario plan "Plan" {
     scenario actual "Actual"
   }
-
+}
 # This is not a real copyright for this file. It's just used as an example.
 copyright "Creative Commons 2025 Proyecto Software - Unizar."
 
