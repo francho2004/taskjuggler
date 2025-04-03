@@ -306,6 +306,21 @@ textreport frame "" {
   }
 }
 
+textreport initialPlan "Initial Plan" {
+  formats html
+  title "Initial Project Plan"
+  headline "Initial Project Plan Overview"
+  columns bsi { title 'WBS' },
+          name, start, end, effort, cost,
+          revenue, chart
+  scenarios plan
+  timeformat "%Y-%m-%d"
+  loadunit days
+  hideresource @all
+  balance cost rev
+  caption 'All effort values are in man days.'
+}
+
 # A traditional Gantt chart with a project overview.
 taskreport overview "" {
   scenarios actual
