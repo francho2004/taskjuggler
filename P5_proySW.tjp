@@ -67,6 +67,10 @@ resource dev2 "Samantha Müller" {
 resource dev3 "Peter Green" {
   email "kkk@unizar.es"
 }
+resource dev4 "Francisco Moreno Domigo" {
+  email "872308@unizar.es"
+  limits { dailymax 4h }
+}
 
 # Now we specify the work packages. The whole project is described as
 # a task that contains subtasks. These subtasks are then broken down
@@ -177,16 +181,16 @@ task WMGame "Web & Mobile Game" {
     task tGUId "Mobile GUI Design" {
       effort 9d
       actual:effort 15d
-      allocate dev3
+      allocate dev4
       journalentry 2025-01-15 "Problems with the GUI design tool" {
-        author dev3
+        author dev4
         alert yellow
         summary "The tool used for the GUI design has given me a lot of problems. I recommend to look for other one."
       }
     }
     task tFEc "Mobile Front End Construction" {
       effort 15d
-      allocate dev2, dev3
+      allocate dev2, dev4
       depends WMGame.twebF.tGUId
     }
     task tFEt "Mobile Front End Test" {
