@@ -120,6 +120,23 @@ task WMGame "Web & Mobile Game" {
     }
   }
 
+  task tdesp "Despliegue Back End" {
+    purge chargeset
+    chargeset back
+    responsible dev1
+    depends WMGame.tgdesign
+    task tBEdesp_descision "Decision de la nube a usar" {
+      effort 2d
+      allocate dev1
+    }
+    task tdespliegue "Despliegue sobre la nube" {
+      effort 2d
+      actual:effort 11d
+      allocate dev1
+      depends WMGame.tback.tBEd
+    }
+  }
+
   task twebF "Web Front End" {
     purge chargeset
     chargeset wFront
@@ -164,7 +181,7 @@ task WMGame "Web & Mobile Game" {
     }
     task tFEc "Mobile Front End Construction" {
       effort 15d
-      allocate dev2, dev3
+      allocate dev2, dev4
       depends WMGame.twebF.tGUId
     }
     task tFEt "Mobile Front End Test" {
@@ -175,6 +192,7 @@ task WMGame "Web & Mobile Game" {
   }
 
   task ttest "Acceptance tests" {
+      minstart 2025-5-15
       effort 10d
       allocate boss
       allocate dev2
