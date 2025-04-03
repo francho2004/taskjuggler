@@ -193,6 +193,7 @@ task WMGame "Web & Mobile Game" {
   }
 
   task ttest "Acceptance tests" {
+      minstart 2025-05-15
       effort 10d
       allocate boss
       allocate dev2
@@ -200,7 +201,6 @@ task WMGame "Web & Mobile Game" {
       depends WMGame.twebF
       depends WMGame.tmobF
       depends WMGame.tback
-      minstart 2025-5-15
       }
 
     
