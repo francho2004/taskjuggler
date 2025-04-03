@@ -304,20 +304,11 @@ textreport frame "" {
     title "Resource Graph"
     center '<[report id="resourceGraph"]>'
   }
-  textreport initialPlan "Initial Plan" {
-  formats html
-  title "Initial Project Plan"
-  headline "Initial Project Plan Overview"
-  columns bsi { title 'WBS' },
-          name, start, end, effort, cost,
-          revenue, chart
-  scenarios plan
-  timeformat "%Y-%m-%d"
-  loadunit days
-  hideresource @all
-  balance cost rev
-  caption 'All effort values are in man days.'
-}
+  textreport initialPlan "InitialPlan" {
+    formats html
+    title "Initial Project Plan"
+    center '<[report id="InitialPlan"]>'
+  }
 }
 
 # A traditional Gantt chart with a project overview.
@@ -417,4 +408,18 @@ resourcereport resourceGraph "" {
   # We only like to show leaf tasks for leaf resources.
   hidetask ~(isleaf() & isleaf_())
   sorttasks plan.start.up
+}
+
+resourcereport initialPlan "" {
+    scenarios actual
+    headline "Initial Project Plan Overview"
+    columns bsi { title 'WBS' },
+            name, start, end, effort, cost,
+            revenue, chart
+    scenarios plan
+    timeformat "%Y-%m-%d"
+    loadunit days
+    hideresource @all
+    balance cost rev
+    caption 'All effort values are in man days.'
 }
