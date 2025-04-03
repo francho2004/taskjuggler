@@ -419,7 +419,7 @@ resourcereport initialPlan "" {
   # of the date. %a is the tag for this.
   timeformat "%a %Y-%m-%d"
   loadunit days
-  hideresource @all
+  hideresource @none
   balance cost rev
   caption 'All effort values are in man days.'
 }
