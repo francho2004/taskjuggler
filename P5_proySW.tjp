@@ -304,10 +304,10 @@ textreport frame "" {
     title "Resource Graph"
     center '<[report id="resourceGraph"]>'
   }
-  textreport initialPlan "InitialPlan" {
+  textreport "InitialPlan" {
     formats html
     title "Initial Project Plan"
-    center '<[report id="InitialPlan"]>'
+    center '<[report id="initialPlan"]>'
   }
 }
 
