@@ -27,7 +27,6 @@ project pSix "Web Game"  2024-12-15 +10m {
   scenario plan "Plan" {
     scenario actual "Actual"
   }
-}
 
 # This is not a real copyright for this file. It's just used as an example.
 copyright "Creative Commons 2025 Proyecto Software - Unizar."
@@ -411,15 +410,16 @@ resourcereport resourceGraph "" {
 }
 
 resourcereport initialPlan "" {
-    scenarios actual
-    headline "Initial Project Plan Overview"
-    columns bsi { title 'WBS' },
-            name, start, end, effort, cost,
-            revenue, chart
-    scenarios plan
-    timeformat "%Y-%m-%d"
-    loadunit days
-    hideresource @all
-    balance cost rev
-    caption 'All effort values are in man days.'
+  scenarios plan
+  headline "Initial Project Plan Overview"
+  columns bsi { title 'WBS' },
+        name, start, end, effort, cost,
+        revenue, chart { ${TaskTip} }
+  # For this report we like to have the abbreviated weekday in front
+  # of the date. %a is the tag for this.
+  timeformat "%a %Y-%m-%d"
+  loadunit days
+  hideresource @all
+  balance cost rev
+  caption 'All effort values are in man days.'
 }
